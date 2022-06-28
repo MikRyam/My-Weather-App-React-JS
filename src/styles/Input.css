@@ -1,0 +1,85 @@
+.input {
+  margin: 1rem;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  align-content: center;
+
+}
+
+.search {
+  margin: 1rem;
+  min-width: 250px;
+  max-width: 380px;
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+
+  border-radius: 8px;
+
+  /* background-color: rgba(255,255,255,0.5); */
+  box-shadow: 2px 4px rgba(59, 59, 59, 0.1);
+
+  transition: 0.4 ease-out;
+}
+
+.search-box:focus {
+  box-shadow: none;
+  border: none;
+}
+
+.search-button {
+  background-color: rgba(255,255,255,0.9)
+}
+
+.search-button:focus {
+  box-shadow: none;
+  border: none;
+}
+
+.geo-button {
+  /* text-align: center; */
+  color: #dbdbdb;
+  text-decoration: none;
+  border: none;
+}
+
+.geo-button:hover {
+  color: #fff;
+  /* font-size: 1,2rem; */
+}
+
+.geo-button:active {
+  color: #929292;
+  /* font-weight: bold; */
+  box-shadow: none;
+  border: none;
+}
+
+.geo-button:focus {
+  box-shadow: none;
+  border: none;
+}
+
+
+
+
+
+.geo-icon {
+  margin: 1rem 1rem;
+  padding: 5px;
+  color: #e6e6e6;
+  font-size: 1.8rem;
+  text-shadow: 3px 6px rgba(50,50,70,0.5);
+}
+
+.geo-icon:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+.geo-icon:active {
+  color: #929292;
+}
+

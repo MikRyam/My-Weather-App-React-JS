@@ -1,0 +1,55 @@
+.current-weather {
+  text-align: center;
+}
+
+.current-weather-top .temp h1 {
+  margin-bottom: 0;
+  font-size: 5rem;
+  color: #fff;
+}
+
+.current-weather p {
+  padding: 0 0.8rem;
+  font-size: 1rem;
+}
+
+.current-weather p span {
+  color: #e6e6e6;
+}
+
+.border-left {
+  border-left: 1px solid #fff;
+}
+
+.current-weather-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.current-weather-top .item {
+  min-width: 200px;
+}
+
+.current-weather-bottom {
+  margin: 1rem auto 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.current-weather-bottom p{
+  line-height: 1;  
+}
+
+.bottom-box-left, .bottom-box-right {
+  display: flex;
+}
+
+@media screen and (max-width: 372px){
+  .border-left:nth-child(1)  {
+    border: none;
+  }
+}
