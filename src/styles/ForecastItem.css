@@ -1,0 +1,27 @@
+.hour-item {
+  margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.hour-item:last-child {
+  margin-right: 0;
+}
+
+.hour-item .day-date-time {
+  margin: 0;
+  font-size: 1rem;
+  display: inline-flex;
+}
+
+.hour-item img {
+  width: 4rem;
+  height: 4rem;
+  color: #fff;
+}
+
+.forecast-temp {
+  font-size: 1.2rem;
+}

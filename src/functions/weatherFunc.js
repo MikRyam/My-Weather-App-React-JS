@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { DateTime } from "luxon";
 
-const myAPI = '895284fb2d2c50a520ea537456963d9c';
+const myAPI = 'cddb40732e554f8200444d24783241fa';
 const baseURL = 'https://api.openweathermap.org/data/2.5';
 
 const getWeatherData = (infoType, searchParams) => {
@@ -51,6 +51,7 @@ const formatForecastWeather = (data) => {
   let { timezone, daily, hourly } = data;
   daily = daily.slice(1).map((d) => {
     return {
+      dt: d.dt,
       title: formatToLocalTime(d.dt, timezone, "ccc, dd LLL"),
       temp: d.temp.day,
       icon: d.weather[0].icon,
@@ -59,6 +60,7 @@ const formatForecastWeather = (data) => {
 
   hourly = hourly.slice(1).map((d) => {
     return {
+      dt: d.dt,
       title: formatToLocalTime(d.dt, timezone, "HH:mm"),
       temp: d.temp,
       icon: d.weather[0].icon,

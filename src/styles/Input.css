@@ -10,7 +10,7 @@
 .search {
   margin: 1rem;
   min-width: 250px;
-  max-width: 380px;
+  max-width: 320px;
   appearance: none;
   background: none;
   border: none;
@@ -43,11 +43,14 @@
   color: #dbdbdb;
   text-decoration: none;
   border: none;
+  /* transition: transform .2s; */
+  transition: 0.2s ease-out;
 }
 
 .geo-button:hover {
   color: #fff;
   /* font-size: 1,2rem; */
+  transform: scale(1.25)
 }
 
 .geo-button:active {

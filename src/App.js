@@ -1,7 +1,5 @@
 // import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-// import React, { useEffect, useState } from 'react';
-
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Forecast from './components/Forecast';
 import CurrentWeather from './components/CurrentWeather';
@@ -13,21 +11,34 @@ import getFormattedWeatherData from './functions/weatherFunc';
 
 const App = () => {
 
-  const [query, setQuery] = useState({ q: "Moscow" });
+  // const [query, setQuery] = useState({ q: "Moscow" });
+  const [query, setQuery] = useState(null);
   const [units, setUnits] = useState("metric");
   const [weather, setWeather] = useState(null);
-
+  
   useEffect(() => {
+    if (query === null) {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+              let lat = position.coords.latitude;
+              let lon = position.coords.longitude;
+              setQuery({lat, lon});
+      });
+    }
+
+    }
+    // if (navigator.geolocation) {
+    //   navigator.geolocation.getCurrentPosition((position) => {
+    //     let lat = position.coords.latitude;
+    //     let lon = position.coords.longitude;
+    //        setLatitude(position.coords.latitude);
+    //        setLongitude(position.coords.longitude);
+    //     setQuery({lat, lon});
+    //   });
+    // }
+
     const fetchWeather = async () => {
-      // const message = query.q ? query.q : "current location.";
-
-      // toast.info("Fetching weather for " + message);
-
       await getFormattedWeatherData({ ...query, units }).then((data) => {
-        // toast.success(
-        //   `Successfully fetched weather for ${data.name}, ${data.country}.`
-        // );
-
         console.log(data);
         setWeather(data);
       });
@@ -65,16 +76,3 @@ const App = () => {
 };
 
 export default App;
-
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-       
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;

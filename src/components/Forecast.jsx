@@ -1,8 +1,9 @@
 import React from 'react'
 import "../styles/Forecast.css";
+import ForecastItem from './ForecastItem';
 
 
-const Forecast = ({title}) => {
+const Forecast = ({ title, items }) => {
   return (
     <div className="forecast-block">
       <div className="forecast-container">
@@ -11,41 +12,9 @@ const Forecast = ({title}) => {
           <hr />
         </div>        
         <div className="forecast-row">
-          <div className="hour-item">
-            <p className="day-data-time">Tue, 28 Jun</p>
-            <img src="https://openweathermap.org/img/wn/01d@2x.png" alt=""/>
-            <p className="forecast-temp">18°</p>
-          </div>
-          <div className="hour-item">
-            <p className="day-data-time">Tue, 28 Jun</p>
-            <img src="https://openweathermap.org/img/wn/01d@2x.png" alt=""/>
-            <p className="forecast-temp">18°</p>
-          </div>
-          <div className="hour-item">
-            <p className="day-data-time">Tue, 28 Jun</p>
-            <img src="https://openweathermap.org/img/wn/01n@2x.png" alt=""/>
-            <p className="forecast-temp">18°</p>
-          </div>
-          <div className="hour-item">
-            <p className="day-data-time">Tue, 28 Jun</p>
-            <img src="https://openweathermap.org/img/wn/01n@2x.png" alt=""/>
-            <p className="forecast-temp">18°</p>
-          </div>
-          <div className="hour-item">
-            <p className="day-data-time">Tue, 28 Jun</p>
-            <img src="https://openweathermap.org/img/wn/01n@2x.png" alt=""/>
-            <p className="forecast-temp">18°</p>
-          </div>
-          <div className="hour-item">
-            <p className="day-data-time">Tue, 28 Jun</p>
-            <img src="https://openweathermap.org/img/wn/01n@2x.png" alt=""/>
-            <p className="forecast-temp">18°</p>
-          </div>
-          <div className="hour-item">
-            <p className="day-data-time">Tue, 28 Jun</p>
-            <img src="https://openweathermap.org/img/wn/01n@2x.png" alt=""/>
-            <p className="forecast-temp">18°</p>
-          </div>
+          {items.map(item =>
+            <ForecastItem key={item.dt} item={item} />
+          )}
         </div>
       </div>
     </div>

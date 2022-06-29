@@ -33,7 +33,7 @@ const CurrentWeather = (
         <div className="details-right item">
           <p className="details"><span>Humidity:</span> {humidity}%</p>
           {/* <FontAwesomeIcon icon="fa-regular fa-wind" /> */}
-          <p className="details"><span>Wind:</span> {` ${speed.toFixed()}`} m/s</p>
+          <p className="details"><span>Wind:</span> {` ${speed.toFixed()}`} km/h</p>
         </div>
       </div>
       <div className="current-weather-bottom">

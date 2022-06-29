@@ -3,6 +3,7 @@
   color: #dbdbdb;
   text-decoration: none;
   border: none;
+  transition: 0.2s ease-out;
 }
 
 /* .top-buttons:focus {
@@ -15,6 +16,7 @@
 .top-buttons:hover {
   color: #fff;
   /* font-size: 1,2rem; */
+  transform: scale(1.2)
 }
 
 .top-buttons:focus, .top-buttons:active {
@@ -22,4 +24,5 @@
   font-weight: bold;
   box-shadow: none;
   border: none;
+  transform: scale(1.2)
 }
