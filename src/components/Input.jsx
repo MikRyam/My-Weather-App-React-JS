@@ -3,6 +3,8 @@ import "../styles/Input.css";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocation } from "@fortawesome/free-solid-svg-icons";
 
 
 const Input = ({ setQuery, units, setUnits }) => {
@@ -41,9 +43,10 @@ const Input = ({ setQuery, units, setUnits }) => {
           Search
         </Button> */}
       </InputGroup>
-      <Button onClick={handleLocationClick} className="geo-button" variant="link" size="lg">
-          Geo
+      <Button onClick={handleLocationClick} className="geo-button" variant="link" size="lg">        
+        <FontAwesomeIcon icon={faLocation} size="2x"/>
       </Button>
+      
 
     </div>
   );
