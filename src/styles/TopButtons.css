@@ -1,3 +1,12 @@
+.top-buttons-container{
+  padding: 0 5rem;
+  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 .top-buttons {
   /* text-align: center; */
   color: #dbdbdb;
@@ -25,4 +34,10 @@
   box-shadow: none;
   border: none;
   transform: scale(1.2)
+}
+
+@media screen and (max-width: 1140px){
+  .top-buttons-container  {
+    padding: 0;
+  }
 }

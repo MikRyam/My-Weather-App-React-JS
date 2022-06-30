@@ -43,8 +43,8 @@ const Input = ({ setQuery, units, setUnits }) => {
           Search
         </Button> */}
       </InputGroup>
-      <Button onClick={handleLocationClick} className="geo-button" variant="link" size="lg">        
-        <FontAwesomeIcon icon={faLocation} size="2x"/>
+      <Button onClick={handleLocationClick} className="geo-button" variant="link" >        
+        <FontAwesomeIcon icon={faLocation} size="2x" className="geo-icon"/>
       </Button>
       
 

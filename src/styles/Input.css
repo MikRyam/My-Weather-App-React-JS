@@ -69,20 +69,20 @@
 
 
 
-.geo-icon {
+/* .geo-icon {
   margin: 1rem 1rem;
   padding: 5px;
   color: #e6e6e6;
   font-size: 1.8rem;
   text-shadow: 3px 6px rgba(50,50,70,0.5);
-}
+} */
 
-.geo-icon:hover {
+/* .geo-icon:hover {
   color: #fff;
   cursor: pointer;
 }
 
-.geo-icon:active {
+.geo-icon:active, .geo-icon:focus {
   color: #929292;
-}
+} */
 
