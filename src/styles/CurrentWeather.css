@@ -48,7 +48,11 @@
   display: flex;
 }
 
-@media screen and (max-width: 372px){
+.current-weather p span .weather-icon {
+  color: #e6e6e6;
+}
+
+@media screen and (max-width: 470px){
   .border-left:nth-child(1)  {
     border: none;
   }
