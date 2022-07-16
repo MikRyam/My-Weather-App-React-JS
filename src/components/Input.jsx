@@ -51,6 +51,7 @@ const Input = ({ setQuery, units, setUnits, isLoading, setIsLoading, message, se
           placeholder="Search for the city..."
           aria-label="Recipient's username"
           aria-describedby="basic-addon2"
+          id="search-box"
         />
         <Button onClick={handleSearchCity} className="search-button" variant="outline-secondary" id="Enter">
           {isLoading ?

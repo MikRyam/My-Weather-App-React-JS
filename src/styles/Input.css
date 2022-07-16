@@ -26,6 +26,10 @@
   position: relative;
 }
 
+.search #search-box {
+  padding: 0 .75rem;
+}
+
 .search-box:focus {
   box-shadow: none;
   border: none;
@@ -39,6 +43,11 @@
 .search-button:focus {
   box-shadow: none;
   border: none;
+}
+
+.search #Enter {
+  border-top-right-radius: .25rem;
+  border-bottom-right-radius: .25rem;
 }
 
 .geo-button {
