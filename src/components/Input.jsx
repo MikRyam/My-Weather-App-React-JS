@@ -1,20 +1,26 @@
 import React, { useState } from 'react';
 import "../styles/Input.css";
 import Button from 'react-bootstrap/Button';
+import Spinner from 'react-bootstrap/Spinner';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocation } from "@fortawesome/free-solid-svg-icons";
+import { faLocation, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-
-const Input = ({ setQuery, units, setUnits }) => {
+const Input = ({ setQuery, units, setUnits, isLoading, setIsLoading }) => {
   const [city, setCity] = useState('');
+  
 
   const handleSearchCity = (event) => {
-    if (event.key === 'Enter') {
+    if (city.trim().length !== 0) {    
+      
       setQuery({ q: city });
       setCity('');
-    }
+    }    
+    // if (event.key === 'Enter') {
+    //   setQuery({ q: city });
+    //   setCity('');
+    // }
   };
 
   const handleLocationClick = () => {
@@ -28,20 +34,34 @@ const Input = ({ setQuery, units, setUnits }) => {
   };
 
   return (
-    <div className="input">
+    <div className="input">      
       <InputGroup className="mb-3 search">
         <Form.Control          
           value={city}
           onChange={(e) => setCity(e.currentTarget.value)}          
-          onKeyPress={handleSearchCity}
+          // onKeyPress={handleSearchCity}
+          onKeyPress={event => {
+            if (event.key === 'Enter') {
+              handleSearchCity()
+            }
+          }}
           className="search-box"
           placeholder="Search for the city..."
           aria-label="Recipient's username"
           aria-describedby="basic-addon2"
         />
-        {/* <Button onClick={handleSearchCity} className="search-button" variant="outline-secondary" id="Enter">
-          Search
-        </Button> */}
+        <Button onClick={handleSearchCity} className="search-button" variant="outline-secondary" id="Enter">
+          {isLoading ?
+            <Spinner
+            as="span"
+            animation="border"
+            size="sm"
+            role="status"
+            aria-hidden="true"
+            /> :
+            <FontAwesomeIcon icon={faMagnifyingGlass}/>
+          }
+        </Button>
       </InputGroup>
       <Button onClick={handleLocationClick} className="geo-button" variant="link" >        
         <FontAwesomeIcon icon={faLocation} size="2x" className="geo-icon"/>

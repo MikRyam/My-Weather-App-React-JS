@@ -15,6 +15,8 @@ const App = () => {
   const [query, setQuery] = useState(null);
   const [units, setUnits] = useState("metric");
   const [weather, setWeather] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  
   
   useEffect(() => {
     if (query === null) {
@@ -37,10 +39,12 @@ const App = () => {
     //   });
     // }
 
-    const fetchWeather = async () => {
+    const fetchWeather = async () => {     
+      setIsLoading(true); 
       await getFormattedWeatherData({ ...query, units }).then((data) => {
         console.log(data);
         setWeather(data);
+        setIsLoading(false);
       });
     };
 
@@ -60,7 +64,7 @@ const App = () => {
   return (
     <div className="App">
       <TopButtons setQuery={setQuery} />
-      <Input setQuery={setQuery} units={units} setUnits={setUnits} />
+      <Input setQuery={setQuery} units={units} setUnits={setUnits} isLoading={isLoading} setIsLoading={setIsLoading} />
 
       {weather && (
         <div>
