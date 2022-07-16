@@ -1,6 +1,9 @@
 import React from 'react'
 import "../styles/TopButtons.css";
 import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 
 const TopButtons = ({ setQuery }) => {
@@ -107,20 +110,29 @@ const TopButtons = ({ setQuery }) => {
     },
   ];
   return (
-    <div className="top-buttons-container">
-      {cities.map((city) => (
-        <Button 
-          key={city.id} 
-          variant="link" 
-          className="top-buttons"
-          // size="lg"   
-          onClick={() => setQuery({ q: city.title })}
-          >
-            {city.title}
-        </Button>        
-      ))}
-
-    </div>
+    <Navbar collapseOnSelect expand="md" variant="dark">
+      <Container>        
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">          
+          <Nav className="me-auto">
+            <div className="top-buttons-container">
+              {cities.map((city) => (
+                <Button 
+                  key={city.id} 
+                  variant="link" 
+                  className="top-buttons"
+                  // size="lg"   
+                  onClick={() => setQuery({ q: city.title })}
+                  >
+                    {city.title}
+                </Button>        
+              ))}
+            </div>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+    
   )
 }
 
