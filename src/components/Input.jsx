@@ -7,7 +7,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocation, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-const Input = ({ setQuery, units, setUnits, isLoading, setIsLoading }) => {
+const Input = ({ setQuery, units, setUnits, isLoading, setIsLoading, message, setMessage }) => {
   const [city, setCity] = useState('');
   
 
@@ -30,6 +30,8 @@ const Input = ({ setQuery, units, setUnits, isLoading, setIsLoading }) => {
         let lon = position.coords.longitude;
         setQuery({lat, lon});
       });
+    } else {
+      setMessage('Geolocation is not supported by your browser');
     }
   };
 
@@ -62,12 +64,13 @@ const Input = ({ setQuery, units, setUnits, isLoading, setIsLoading }) => {
             <FontAwesomeIcon icon={faMagnifyingGlass}/>
           }
         </Button>
+        <p className="status" id="message">{message}</p>
       </InputGroup>
       <Button onClick={handleLocationClick} className="geo-button" variant="link" >        
         <FontAwesomeIcon icon={faLocation} size="2x" className="geo-icon"/>
       </Button>
       
-
+      
     </div>
   );
 };

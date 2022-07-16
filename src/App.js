@@ -16,17 +16,20 @@ const App = () => {
   const [units, setUnits] = useState("metric");
   const [weather, setWeather] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  
+  const [message, setMessage] = useState('');  
   
   useEffect(() => {
     if (query === null) {
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((position) => {
-              let lat = position.coords.latitude;
-              let lon = position.coords.longitude;
-              setQuery({lat, lon});
-      });
-    }
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          let lat = position.coords.latitude;
+          let lon = position.coords.longitude;
+          setQuery({lat, lon});
+          setMessage(''); 
+        });
+      } else {
+        setMessage('Geolocation is not supported by your browser');
+      }
 
     }
     // if (navigator.geolocation) {
@@ -39,12 +42,21 @@ const App = () => {
     //   });
     // }
 
-    const fetchWeather = async () => {     
+    const fetchWeather = async () => {
+      setMessage('');     
       setIsLoading(true); 
       await getFormattedWeatherData({ ...query, units }).then((data) => {
         console.log(data);
         setWeather(data);
+        setMessage('');
         setIsLoading(false);
+      }).catch(errors => {
+        if (errors.code === "ERR_BAD_REQUEST") {
+          setMessage('City Not Found');
+          setIsLoading(false);
+        }
+        
+        console.log(errors)
       });
     };
 
@@ -64,8 +76,8 @@ const App = () => {
   return (
     <div className="App">
       <TopButtons setQuery={setQuery} />
-      <Input setQuery={setQuery} units={units} setUnits={setUnits} isLoading={isLoading} setIsLoading={setIsLoading} />
-
+      <Input setQuery={setQuery} units={units} setUnits={setUnits} isLoading={isLoading} setIsLoading={setIsLoading} message={message} setMessage={setMessage}/>
+      
       {weather && (
         <div>
           <TimeAndLocation weather={weather} />
