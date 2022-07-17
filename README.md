@@ -1,7 +1,26 @@
-### Screenshots
+## Website: https://my-weather-app-react-js.vercel.app/
 
+## Features:
+
+* Weather App With React JS
+* Current Weather, Hourly And Daily Forecast
+* Free OpenWeatherMap API
+* Geolocation
+* Local Date & Time
+* Responsive Website
+
+* Getting weather data:
+  * for the city from the list of cities
+  * search for the city
+  * getting current geolocation
+
+
+## Screenshots
+
+##### Desktop
 ![Desktop](/assets/images/markdown/my-weather-app.png)
 
+##### Mobile
 ![Mobile](/assets/images/markdown/my-weather-app-mobile.png)
 
 
