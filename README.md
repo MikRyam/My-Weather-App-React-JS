@@ -17,10 +17,10 @@
 
 ## Screenshots
 
-##### Desktop
+#### Desktop
 ![Desktop](/assets/images/markdown/my-weather-app.png)
 
-##### Mobile
+#### Mobile
 ![Mobile](/assets/images/markdown/my-weather-app-mobile.png)
 
 
