@@ -1,12 +1,14 @@
 ### Screenshots
 
-image.png
+![Desktop](/assets/images/markdown/my-weather-app.png)
+
+![Mobile](/assets/images/markdown/my-weather-app-mobile.png)
 
 
+## Demo: installing a package
 
-# Getting Started with Create React App
+[![asciicast](https://asciinema.org/a/FLkE7G37usYTFo23IBgNEYmH2.svg)](https://asciinema.org/a/FLkE7G37usYTFo23IBgNEYmH2)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
