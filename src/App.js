@@ -1,12 +1,12 @@
 // import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import Forecast from './components/Forecast';
-import CurrentWeather from './components/CurrentWeather';
-import TimeAndLocation from './components/TimeAndLocation';
-import Input from './components/Input';
-import TopButtons from './components/TopButtons';
-import getFormattedWeatherData from './functions/weatherFunc';
+import Forecast from './components/Forecast.jsx';
+import CurrentWeather from './components/CurrentWeather.jsx';
+import TimeAndLocation from './components/TimeAndLocation.jsx';
+import Input from './components/Input.jsx';
+import TopButtons from './components/TopButtons.jsx';
+import getFormattedWeatherData from './functions/weatherFunc.js';
 
 
 const App = () => {

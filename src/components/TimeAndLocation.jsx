@@ -1,6 +1,6 @@
 import React from 'react'
 import "../styles/TimeAndLocation.css";
-import { formatToLocalTime } from '../functions/weatherFunc';
+import { formatToLocalTime } from '../functions/weatherFunc.js';
 
 
 const TimeAndLocation = ({ weather: { dt, timezone, name, country } }) => {
